@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background: whitesmoke;
+            flex-wrap: wrap;
+        }
+        div{
+            height: 400px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px  2px black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            font-weight: 440;
+            background: rgb(146, 117, 146);
+        }
+
+        a{
+            font-size: 16px;
+            
+        }
+        
+        form{
+            height: 200px;
+            width: 350px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+        }
+        #name,#password{
+            height: 30px;
+            width: 220px;
+            border-radius: 10px;
+            font-size: 15px;
+            background-color: whitesmoke;
+        }
+        button{
+            height: 30px;
+            width: 100px;
+            border-radius: 20px;
+            box-shadow: 1px 2px 2px black;
+            font-size: 15px;
+            background: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+        <div>
+            <h2>Login Form</h2>
+            <form action="">
+                <label for="name">Email ID</label>
+                <input type="text" id="name" placeholder="Username or EmailID">
+                <br>
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Password">
+                <br>
+                <button id="login">Login</button>
+            </form>
+            <p>Don't have account? <a href="./signup.html" target="_self">SIGNUP</a></p>
+        </div>
+
+    <script>
+        let log = document.getElementById('login')
+        log.addEventListener('click',(e)=>{
+            e.preventDefault();
+            let name= document.getElementById('name').value
+            let pws= document.getElementById('password').value
+
+            let temp=window.sessionStorage.getItem('email')
+            let temp1=window.sessionStorage.getItem('password')
+            if(name == temp  && pws == temp1)
+            {
+                window.open("./index.html")
+            }
+            else
+            {
+                alert(`You enter wrong email ID or Password`);
+            }
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            background: whitesmoke;
+        }
+        div{
+            height: 450px;
+            width: 350px;
+            box-shadow: 2px 2px 2px 2px black;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 50px;
+            font-weight: 400;
+            background: rgb(146, 117, 146);
+        }
+
+        form{
+            height: 200px;
+            width: 350px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+        }
+        #name,#password,#email{
+            height: 30px;
+            width: 220px;
+            border-radius: 10px;
+            box-shadow: 1px 2px 2px black;
+            background-color:whitesmoke;
+        }
+        #signup{
+            height: 30px;
+            width: 100px;
+            border-radius: 20px;
+            box-shadow: 2px 2px 2px 2px black;
+            font-size: 15px;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+        <div>
+            <h2>Registration Form</h2>
+            <form action="">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your Name">
+                <br>
+                <label for="email">Email Id</label>
+                <input type="email" id="email" placeholder="Enter Email Id">
+                <br>
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Password">
+            </form>
+            <button id="signup">SignUP</button>
+        </div>
+
+    <script>
+        let sign = document.getElementById('signup')
+        sign.addEventListener('click',(e)=>{
+            e.preventDefault();
+            let name= document.getElementById('name').value
+            let email= document.getElementById('email').value
+            let pws= document.getElementById('password').value
+
+            window.sessionStorage.setItem("name",name)
+            window.sessionStorage.setItem("email",email)
+            window.sessionStorage.setItem("password",pws)
+
+            window.open("./login.html")
+        })
+    </script>
+</body>
+</html>
